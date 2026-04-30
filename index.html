@@ -2,142 +2,143 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sundram | Premium Site</title>
+<title>SinnerHub Store</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
 body{
+  font-family:sans-serif;
   background:#0f0f0f;
   color:white;
+  margin:0;
 }
 
-/* Navbar */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 50px;
-}
-
-nav h1{
+header{
+  text-align:center;
+  padding:20px;
+  font-size:28px;
   color:#00f7ff;
 }
 
-nav a{
-  color:white;
-  margin-left:20px;
-  text-decoration:none;
-}
-
-/* Hero Section */
-.hero{
-  height:90vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
-
-.hero h1{
-  font-size:60px;
-  background:linear-gradient(90deg,#00f7ff,#ff00ff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.hero p{
-  margin-top:15px;
-  font-size:18px;
-  opacity:0.8;
-}
-
-.btn{
-  margin-top:25px;
-  padding:12px 30px;
-  border:none;
-  border-radius:25px;
-  background:linear-gradient(90deg,#00f7ff,#ff00ff);
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:scale(1.1);
-}
-
-/* Cards */
-.cards{
+.products{
   display:flex;
   justify-content:center;
   gap:20px;
-  padding:50px;
   flex-wrap:wrap;
+  padding:20px;
 }
 
 .card{
-  background:rgba(255,255,255,0.05);
-  padding:25px;
-  border-radius:15px;
-  width:250px;
-  backdrop-filter:blur(10px);
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-}
-
-footer{
-  text-align:center;
+  background:#1a1a1a;
   padding:20px;
-  opacity:0.6;
+  border-radius:15px;
+  width:220px;
+  text-align:center;
+}
+
+.card button{
+  margin-top:10px;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(90deg,#00f7ff,#ff00ff);
+  color:white;
+  cursor:pointer;
+}
+
+.form-box{
+  text-align:center;
+  padding:30px;
+}
+
+input, textarea, select{
+  width:80%;
+  padding:10px;
+  margin:10px;
+  border-radius:10px;
+  border:none;
+}
+
+button.submit{
+  padding:12px 25px;
+  background:linear-gradient(90deg,#00f7ff,#ff00ff);
+  border:none;
+  border-radius:20px;
+  color:white;
+  cursor:pointer;
 }
 </style>
+
+<script>
+function selectProduct(name){
+  document.getElementById("product").value = name;
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function showUPI(){
+  let method = document.getElementById("payment").value;
+  let upi = document.getElementById("upiBox");
+  upi.style.display = (method === "Online") ? "block" : "none";
+}
+</script>
+
 </head>
 
 <body>
 
-<nav>
-  <h1>Sundram</h1>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </div>
-</nav>
+<header>🛒 SinnerHub Store</header>
 
-<section class="hero">
-  <h1>Build Something Amazing 🚀</h1>
-  <p>Modern, fast and beautiful websites</p>
-  <button class="btn">Get Started</button>
-</section>
+<div class="products">
 
-<section class="cards">
-  <div class="card">
-    <h3>Fast</h3>
-    <p>Lightning speed performance</p>
-  </div>
-  <div class="card">
-    <h3>Modern</h3>
-    <p>Clean and stylish UI design</p>
-  </div>
-  <div class="card">
-    <h3>Responsive</h3>
-    <p>Works on all devices</p>
-  </div>
-</section>
+<div class="card">
+<h3>T-Shirt</h3>
+<p>₹499</p>
+<button onclick="selectProduct('T-Shirt')">Buy</button>
+</div>
 
-<footer>
-  © 2026 Sundram | All Rights Reserved
-</footer>
+<div class="card">
+<h3>Perfume</h3>
+<p>₹799</p>
+<button onclick="selectProduct('Perfume')">Buy</button>
+</div>
+
+<div class="card">
+<h3>Watch</h3>
+<p>₹1299</p>
+<button onclick="selectProduct('Watch')">Buy</button>
+</div>
+
+</div>
+
+<div class="form-box">
+
+<h2>Place Order</h2>
+
+<form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<textarea name="address" placeholder="Full Address" required></textarea>
+
+<input type="text" id="product" name="product" placeholder="Selected Product" required>
+
+<select name="payment" id="payment" onchange="showUPI()" required>
+<option value="">Payment Method</option>
+<option value="COD">Cash on Delivery</option>
+<option value="Online">Online (UPI)</option>
+</select>
+
+<div id="upiBox" style="display:none;">
+<p>Pay on UPI: <b>yourupi@okupi</b></p>
+<input type="text" name="txn" placeholder="Enter Transaction ID">
+</div>
+
+<button class="submit">Place Order 🚀</button>
+
+</form>
+
+</div>
 
 </body>
 </html>
