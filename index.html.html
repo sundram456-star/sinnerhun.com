@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sundram | Premium Site</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background:#0f0f0f;
+  color:white;
+}
+
+/* Navbar */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+}
+
+nav h1{
+  color:#00f7ff;
+}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+}
+
+/* Hero Section */
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:60px;
+  background:linear-gradient(90deg,#00f7ff,#ff00ff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  margin-top:15px;
+  font-size:18px;
+  opacity:0.8;
+}
+
+.btn{
+  margin-top:25px;
+  padding:12px 30px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(90deg,#00f7ff,#ff00ff);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+}
+
+/* Cards */
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:50px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:15px;
+  width:250px;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>Sundram</h1>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Build Something Amazing 🚀</h1>
+  <p>Modern, fast and beautiful websites</p>
+  <button class="btn">Get Started</button>
+</section>
+
+<section class="cards">
+  <div class="card">
+    <h3>Fast</h3>
+    <p>Lightning speed performance</p>
+  </div>
+  <div class="card">
+    <h3>Modern</h3>
+    <p>Clean and stylish UI design</p>
+  </div>
+  <div class="card">
+    <h3>Responsive</h3>
+    <p>Works on all devices</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Sundram | All Rights Reserved
+</footer>
+
+</body>
+</html>
