@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SinnerHub</title>
+
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#0f0f0f;
+  color:white;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:50px;
+  background:linear-gradient(90deg,#00f7ff,#ff00ff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  opacity:0.7;
+  margin:10px;
+}
+
+.btn{
+  padding:12px 30px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(90deg,#00f7ff,#ff00ff);
+  color:white;
+  cursor:pointer;
+}
+
+/* PRODUCT */
+.product{
+  text-align:center;
+  padding:40px;
+}
+
+.product img{
+  width:250px;
+  border-radius:15px;
+}
+
+iframe{
+  margin-top:15px;
+}
+
+/* FORM */
+.form-box{
+  padding:40px;
+  text-align:center;
+}
+
+input, textarea{
+  width:80%;
+  padding:10px;
+  margin:10px;
+  border-radius:10px;
+  border:none;
+}
+
+button.submit{
+  padding:12px 25px;
+  border:none;
+  border-radius:20px;
+  background:linear-gradient(90deg,#00f7ff,#ff00ff);
+  color:white;
+  cursor:pointer;
+}
+</style>
+
+<script>
+function scrollToForm(){
+  document.getElementById("order").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Premium Product 🔥</h1>
+  <p>Simple • Stylish • Worth Buying</p>
+  <button class="btn" onclick="scrollToForm()">Buy Now 🚀</button>
+</div>
+
+<!-- PRODUCT -->
+<div class="product">
+
+<h2>🔥 Trending Product</h2>
+
+<img src="https://via.placeholder.com/300">
+
+<br>
+
+<iframe width="300" height="180" 
+src="https://www.youtube.com/embed/ScMzIvxBSi4">
+</iframe>
+
+<p>✔ Cash on Delivery Available</p>
+<p>✔ Delivery in 3–5 Days</p>
+<p>✔ Limited Stock</p>
+
+<button class="btn" onclick="scrollToForm()">Order Now</button>
+
+</div>
+
+<!-- FORM -->
+<div class="form-box" id="order">
+
+<h2>Place Your Order</h2>
+
+<form action="https://formsubmit.co/boysdbc792@gmail.com" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<textarea name="address" placeholder="Full Address" required></textarea>
+
+<input type="text" name="product" placeholder="Product Name" required>
+
+<button class="submit">Place Order 🚀</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
